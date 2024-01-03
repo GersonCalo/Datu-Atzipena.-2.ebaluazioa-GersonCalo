@@ -1,13 +1,14 @@
-package dambi.futbolmanager;
+package dambi.proyect;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FutbolManagerApplication {
+public class ProyectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FutbolManagerApplication.class, args);
+		SpringApplication.run(ProyectApplication.class, args);
+		System.out.println("Hola mundo");
 	}
 
 }
