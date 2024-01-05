@@ -21,7 +21,7 @@ public class App
             MongoDatabase database = mongoClient.getDatabase("futbolariakDataBase");
             MongoCollection<Document> collection = database.getCollection("futbolariak");
 
-            Path csvFilePath = Paths.get("C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\fifa_test.csv");
+            Path csvFilePath = Paths.get("C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\fifa_players.csv");
 
 
             try (CSVReader csvReader = new CSVReader(new FileReader(csvFilePath.toFile()))) {
