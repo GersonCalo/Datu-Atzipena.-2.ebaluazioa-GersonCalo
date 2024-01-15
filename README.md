@@ -4,13 +4,6 @@
 Proiektuaren helburu nagusia Mongo datu-base bateko datuak atzitzeko Rest API bat garatzea izango da, Spring Java teknologia erabiliz.
 
 
-## Aurkibidea
-
-    1. [Datu basea](#db)
-    2. [Rest API-a](#rest-api)
-    3. [Dokumentazioa](#dok)
-    4. [Erabilera](#erabilera)
-    5. [Oharrak](#oharrak)
 ## Datu Basea
 
 Datuak mongo datu-base batetik kudeatuko ditugu. Horretarako Mongo zerbitzariaren MongoDBCompass GUI ofiziala erabiliko ditugu lana erosoago egiteko.
