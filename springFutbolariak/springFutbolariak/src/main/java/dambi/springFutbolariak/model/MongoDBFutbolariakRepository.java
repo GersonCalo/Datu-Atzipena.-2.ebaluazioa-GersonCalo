@@ -46,16 +46,27 @@ public class MongoDBFutbolariakRepository implements FutbolariakRepository {
     }
 
     @Override
+    public List<Futbolariak> findByNationality(String nationality) {
+        return futbolariakCollection.find(eq("nationality", nationality)).into(new ArrayList<>());
+    }
+
+    @Override
+    public  void deleteById(String futbolariId){
+        futbolariakCollection.deleteOne(eq("_id",new ObjectId(futbolariId)));
+    }
+
+    @Override
+    public void deleteByName(String name){
+        futbolariakCollection.deleteMany(eq("name",name));
+    }
+
+
+    @Override
     public Futbolariak save(Futbolariak futbolariak){
         futbolariak.setId(new ObjectId());
         futbolariakCollection.insertOne(futbolariak);
         return futbolariak;
     }
 
-    @Override
-    public long delete(String izena){
-        return futbolariakCollection.deleteMany(eq("izena",izena)).getDeletedCount();
-    }
-
-    
+        
 }

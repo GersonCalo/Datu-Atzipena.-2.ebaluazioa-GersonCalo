@@ -8,15 +8,15 @@ public class Futbolariak {
     private String name;
     private String full_name;
     private String birth_date;
-    private String age;
-    private String height_cm;
-    private String weight_kgs;
+    private int age;
+    private Double height_cm;
+    private Double weight_kgs;
     private String positions;
     private String nationality;
-    private String overall_rating;
-    private String potential;
-    private String value_euro;
-    private String wage_euro;
+    private int overall_rating;
+    private int potential;
+    private Double value_euro;
+    private Double wage_euro;
     private String preferred_foot;
     private String international_reputation;
     private String weak_foot;
@@ -57,7 +57,8 @@ public class Futbolariak {
     private String standing_tackle;
     private String sliding_tackle;
 
-    //getter setter
+
+
     public ObjectId getId() {
         return id;
     }
@@ -82,22 +83,22 @@ public class Futbolariak {
     public void setBirth_date(String birth_date) {
         this.birth_date = birth_date;
     }
-    public String getAge() {
+    public int getAge() {
         return age;
     }
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
-    public String getHeight_cm() {
+    public Double getHeight_cm() {
         return height_cm;
     }
-    public void setHeight_cm(String height_cm) {
+    public void setHeight_cm(Double height_cm) {
         this.height_cm = height_cm;
     }
-    public String getWeight_kgs() {
+    public Double getWeight_kgs() {
         return weight_kgs;
     }
-    public void setWeight_kgs(String weight_kgs) {
+    public void setWeight_kgs(Double weight_kgs) {
         this.weight_kgs = weight_kgs;
     }
     public String getPositions() {
@@ -112,28 +113,28 @@ public class Futbolariak {
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
-    public String getOverall_rating() {
+    public int getOverall_rating() {
         return overall_rating;
     }
-    public void setOverall_rating(String overall_rating) {
+    public void setOverall_rating(int overall_rating) {
         this.overall_rating = overall_rating;
     }
-    public String getPotential() {
+    public int getPotential() {
         return potential;
     }
-    public void setPotential(String potential) {
+    public void setPotential(int potential) {
         this.potential = potential;
     }
-    public String getValue_euro() {
+    public Double getValue_euro() {
         return value_euro;
     }
-    public void setValue_euro(String value_euro) {
+    public void setValue_euro(Double value_euro) {
         this.value_euro = value_euro;
     }
-    public String getWage_euro() {
+    public Double getWage_euro() {
         return wage_euro;
     }
-    public void setWage_euro(String wage_euro) {
+    public void setWage_euro(Double wage_euro) {
         this.wage_euro = wage_euro;
     }
     public String getPreferred_foot() {
@@ -370,26 +371,18 @@ public class Futbolariak {
     public void setSliding_tackle(String sliding_tackle) {
         this.sliding_tackle = sliding_tackle;
     }
-    @Override
-    public String toString() {
-        return "Futbolariak [id=" + id + ", name=" + name + ", full_name=" + full_name + ", birth_date=" + birth_date
-                + ", age=" + age + ", height_cm=" + height_cm + ", weight_kgs=" + weight_kgs + ", positions="
-                + positions + ", nationality=" + nationality + ", overall_rating=" + overall_rating + ", potential="
-                + potential + ", value_euro=" + value_euro + ", wage_euro=" + wage_euro + ", preferred_foot="
-                + preferred_foot + ", international_reputation=" + international_reputation + ", weak_foot=" + weak_foot
-                + ", skill_moves=" + skill_moves + ", body_type=" + body_type + ", release_clause_euro="
-                + release_clause_euro + ", national_team=" + national_team + ", national_rating=" + national_rating
-                + ", national_team_position=" + national_team_position + ", national_jersey_number="
-                + national_jersey_number + ", crossing=" + crossing + ", finishing=" + finishing + ", heading_accuracy="
-                + heading_accuracy + ", short_passing=" + short_passing + ", volleys=" + volleys + ", dribbling="
-                + dribbling + ", curve=" + curve + ", freekick_accuracy=" + freekick_accuracy + ", long_passing="
-                + long_passing + ", ball_control=" + ball_control + ", acceleration=" + acceleration + ", sprint_speed="
-                + sprint_speed + ", agility=" + agility + ", reactions=" + reactions + ", balance=" + balance
-                + ", shot_power=" + shot_power + ", jumping=" + jumping + ", stamina=" + stamina + ", strength="
-                + strength + ", long_shots=" + long_shots + ", aggression=" + aggression + ", interceptions="
-                + interceptions + ", positioning=" + positioning + ", vision=" + vision + ", penalties=" + penalties
-                + ", composure=" + composure + ", marking=" + marking + ", standing_tackle=" + standing_tackle
-                + ", sliding_tackle=" + sliding_tackle + "]";
+
+    
+    public Futbolariak() {
     }
+    public Futbolariak(String name, String full_name, int age, Double value_euro) {
+        this.name = name;
+        this.full_name = full_name;
+        this.age = age;
+        this.value_euro = value_euro;
+    }
+
+    
+    
     
 }
