@@ -22,12 +22,11 @@ public class SpringConfiguration {
 
     @Bean
     public MongoClient mongoClient(){
-       CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());//JavaObject <=> BSONdocument konbertsioa gauzatzeko 
+        CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());//JavaObject <=> BSONdocument konbertsioa gauzatzeko 
         CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);
         return MongoClients.create(MongoClientSettings.builder()
-                                                      .applyConnectionString(new ConnectionString(connectionString))
-                                                      .codecRegistry(codecRegistry)
-                                                      .build());
-       
+                                                        .applyConnectionString(new ConnectionString(connectionString))
+                                                        .codecRegistry(codecRegistry)
+                                                        .build());
     }
 }
