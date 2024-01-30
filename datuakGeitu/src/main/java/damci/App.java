@@ -40,6 +40,11 @@ public class App {
                         String value = record[j];
 
                         switch (columnName) {
+                            case "positions":
+                                // Dividir la cadena de posiciones por comas y almacenar en un array
+                                String[] positionsArray = value.split(",");
+                                document.append(columnName, Arrays.asList(positionsArray));
+                                break;
                             case "age":
                             case "overall_rating":
                             case "potential":
