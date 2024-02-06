@@ -1,5 +1,7 @@
 package dambi.springFutbolariak.model;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 
 public class Futbolariak {
@@ -11,7 +13,7 @@ public class Futbolariak {
     private int age;
     private Double height_cm;
     private Double weight_kgs;
-    private String positions;
+    private List<String> positions;
     private String nationality;
     private int overall_rating;
     private int potential;
@@ -101,10 +103,10 @@ public class Futbolariak {
     public void setWeight_kgs(Double weight_kgs) {
         this.weight_kgs = weight_kgs;
     }
-    public String getPositions() {
+    public List<String> getPositions() {
         return positions;
     }
-    public void setPositions(String positions) {
+    public void setPositions(List<String>  positions) {
         this.positions = positions;
     }
     public String getNationality() {
