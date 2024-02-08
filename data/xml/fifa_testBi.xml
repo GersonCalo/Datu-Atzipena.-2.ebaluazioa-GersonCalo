@@ -17,9 +17,9 @@
         <value_euro>110500000</value_euro>
         <wage_euro>565000</wage_euro>
         <preferred_foot>Left</preferred_foot>
-        <international_reputation(1-5)>5</international_reputation(1-5)>
-        <weak_foot(1-5)>4</weak_foot(1-5)>
-        <skill_moves(1-5)>4</skill_moves(1-5)>
+        <international_reputation_1-5_>5</international_reputation_1-5_>
+        <weak_foot_1-5_>4</weak_foot_1-5_>
+        <skill_moves_1-5>4</skill_moves_1-5>
         <body_type>Messi</body_type>
         <release_clause_euro>226500000</release_clause_euro>
         <national_team>Argentina</national_team>
@@ -74,9 +74,9 @@
         <value_euro>69500000</value_euro>
         <wage_euro>205000</wage_euro>
         <preferred_foot>Right</preferred_foot>
-        <international_reputation(1-5)>3</international_reputation(1-5)>
-        <weak_foot(1-5)>5</weak_foot(1-5)>
-        <skill_moves(1-5)>4</skill_moves(1-5)>
+        <international_reputation_1-5_>3</international_reputation_1-5_>
+        <weak_foot_1-5_>5</weak_foot_1-5_>
+        <skill_moves_1-5>4</skill_moves_1-5>
         <body_type>Lean</body_type>
         <release_clause_euro>133800000</release_clause_euro>
         <national_team>Denmark</national_team>
@@ -130,9 +130,9 @@
         <value_euro>73000000</value_euro>
         <wage_euro>255000</wage_euro>
         <preferred_foot>Right</preferred_foot>
-        <international_reputation(1-5)>4</international_reputation(1-5)>
-        <weak_foot(1-5)>4</weak_foot(1-5)>
-        <skill_moves(1-5)>5</skill_moves(1-5)>
+        <international_reputation_1-5_>4</international_reputation_1-5_>
+        <weak_foot_1-5_>4</weak_foot_1-5_>
+        <skill_moves_1-5>5</skill_moves_1-5>
         <body_type>Normal</body_type>
         <release_clause_euro>144200000</release_clause_euro>
         <national_team>France</national_team>
