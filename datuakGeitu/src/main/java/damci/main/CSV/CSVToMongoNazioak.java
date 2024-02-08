@@ -1,4 +1,4 @@
-package damci.main.CSV;
+package damci.main.csv;
 
 import java.io.FileReader;
 import java.nio.file.Path;

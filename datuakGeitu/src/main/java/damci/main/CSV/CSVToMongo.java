@@ -1,4 +1,4 @@
-package damci.main.CSV;
+package damci.main.csv;
 
 import java.io.FileReader;
 import java.nio.file.Path;
@@ -13,7 +13,9 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.opencsv.CSVReader;
-
+/*Este programa Java carga datos desde un archivo CSV a una base de datos MongoDB. 
+Lee el archivo CSV, crea documentos MongoDB a partir de los datos y los inserta en una colección de la base de datos MongoDB. 
+El programa utiliza try-with-resources para gestionar la conexión y garantizar la liberación adecuada de recursos.*/
 public class CSVToMongo {
     public static void main(String[] args) {
         try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017")) {
@@ -37,6 +39,11 @@ public class CSVToMongo {
                         String value = record[j];
 
                         switch (columnName) {
+                            case "positions":
+                                // Dividir la cadena de posiciones por comas y almacenar en un array
+                                String[] positionsArray = value.split(",");
+                                document.append(columnName, Arrays.asList(positionsArray));
+                                break;
                             case "age":
                             case "overall_rating":
                             case "potential":

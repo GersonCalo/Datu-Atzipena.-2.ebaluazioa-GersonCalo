@@ -2,8 +2,8 @@ package damci;
 
 import java.util.Scanner;
 
-import damci.main.CSV.CSVToMongo;
-import damci.main.CSV.CSVToMongoNazioak;
+import damci.main.csv.CSVToMongo;
+import damci.main.csv.CSVToMongoNazioak;
 
 public class menu {
     public static Scanner scanner = new Scanner(System.in);
