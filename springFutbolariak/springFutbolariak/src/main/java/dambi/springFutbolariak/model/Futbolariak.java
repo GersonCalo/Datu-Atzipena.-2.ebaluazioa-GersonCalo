@@ -7,12 +7,7 @@ import org.bson.types.ObjectId;
 public class Futbolariak {
 
     private ObjectId id;
-    private String name;
-    private String full_name;
-    private String birth_date;
-    private int age;
-    private Double height_cm;
-    private Double weight_kgs;
+    private Player player;
     private List<String> positions;
     private String nationality;
     private int overall_rating;
@@ -20,16 +15,16 @@ public class Futbolariak {
     private Double value_euro;
     private Double wage_euro;
     private String preferred_foot;
-    private String international_reputation;
-    private String weak_foot;
-    private String skill_moves;
+    private int international_reputation;
+    private int weak_foot;
+    private int skill_moves;
     private String body_type;
-    private String release_clause_euro;
+    private Double release_clause_euro;
     private String national_team;
-    private String national_rating;
+    private int national_rating;
     private String national_team_position;
     private String national_jersey_number;
-    private String crossing;
+    private int crossing;
     private String finishing;
     private String heading_accuracy;
     private String short_passing;
@@ -58,55 +53,84 @@ public class Futbolariak {
     private String marking;
     private String standing_tackle;
     private String sliding_tackle;
-
-
-
+    
+    
+    public Futbolariak() {
+    }
+    public Futbolariak(ObjectId id, Player player, List<String> positions, String nationality, int overall_rating,
+            int potential, Double value_euro, Double wage_euro, String preferred_foot, int international_reputation,
+            int weak_foot, int skill_moves, String body_type, Double release_clause_euro, String national_team,
+            int national_rating, String national_team_position, String national_jersey_number, int crossing,
+            String finishing, String heading_accuracy, String short_passing, String volleys, String dribbling,
+            String curve, String freekick_accuracy, String long_passing, String ball_control, String acceleration,
+            String sprint_speed, String agility, String reactions, String balance, String shot_power, String jumping,
+            String stamina, String strength, String long_shots, String aggression, String interceptions,
+            String positioning, String vision, String penalties, String composure, String marking,
+            String standing_tackle, String sliding_tackle) {
+        this.id = id;
+        this.player = player;
+        this.positions = positions;
+        this.nationality = nationality;
+        this.overall_rating = overall_rating;
+        this.potential = potential;
+        this.value_euro = value_euro;
+        this.wage_euro = wage_euro;
+        this.preferred_foot = preferred_foot;
+        this.international_reputation = international_reputation;
+        this.weak_foot = weak_foot;
+        this.skill_moves = skill_moves;
+        this.body_type = body_type;
+        this.release_clause_euro = release_clause_euro;
+        this.national_team = national_team;
+        this.national_rating = national_rating;
+        this.national_team_position = national_team_position;
+        this.national_jersey_number = national_jersey_number;
+        this.crossing = crossing;
+        this.finishing = finishing;
+        this.heading_accuracy = heading_accuracy;
+        this.short_passing = short_passing;
+        this.volleys = volleys;
+        this.dribbling = dribbling;
+        this.curve = curve;
+        this.freekick_accuracy = freekick_accuracy;
+        this.long_passing = long_passing;
+        this.ball_control = ball_control;
+        this.acceleration = acceleration;
+        this.sprint_speed = sprint_speed;
+        this.agility = agility;
+        this.reactions = reactions;
+        this.balance = balance;
+        this.shot_power = shot_power;
+        this.jumping = jumping;
+        this.stamina = stamina;
+        this.strength = strength;
+        this.long_shots = long_shots;
+        this.aggression = aggression;
+        this.interceptions = interceptions;
+        this.positioning = positioning;
+        this.vision = vision;
+        this.penalties = penalties;
+        this.composure = composure;
+        this.marking = marking;
+        this.standing_tackle = standing_tackle;
+        this.sliding_tackle = sliding_tackle;
+    }
     public ObjectId getId() {
         return id;
     }
     public void setId(ObjectId id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public Player getPlayer() {
+        return player;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getFull_name() {
-        return full_name;
-    }
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
-    }
-    public String getBirth_date() {
-        return birth_date;
-    }
-    public void setBirth_date(String birth_date) {
-        this.birth_date = birth_date;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    public Double getHeight_cm() {
-        return height_cm;
-    }
-    public void setHeight_cm(Double height_cm) {
-        this.height_cm = height_cm;
-    }
-    public Double getWeight_kgs() {
-        return weight_kgs;
-    }
-    public void setWeight_kgs(Double weight_kgs) {
-        this.weight_kgs = weight_kgs;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     public List<String> getPositions() {
         return positions;
     }
-    public void setPositions(List<String>  positions) {
+    public void setPositions(List<String> positions) {
         this.positions = positions;
     }
     public String getNationality() {
@@ -145,22 +169,22 @@ public class Futbolariak {
     public void setPreferred_foot(String preferred_foot) {
         this.preferred_foot = preferred_foot;
     }
-    public String getInternational_reputation() {
+    public int getInternational_reputation() {
         return international_reputation;
     }
-    public void setInternational_reputation(String international_reputation) {
+    public void setInternational_reputation(int international_reputation) {
         this.international_reputation = international_reputation;
     }
-    public String getWeak_foot() {
+    public int getWeak_foot() {
         return weak_foot;
     }
-    public void setWeak_foot(String weak_foot) {
+    public void setWeak_foot(int weak_foot) {
         this.weak_foot = weak_foot;
     }
-    public String getSkill_moves() {
+    public int getSkill_moves() {
         return skill_moves;
     }
-    public void setSkill_moves(String skill_moves) {
+    public void setSkill_moves(int skill_moves) {
         this.skill_moves = skill_moves;
     }
     public String getBody_type() {
@@ -169,10 +193,10 @@ public class Futbolariak {
     public void setBody_type(String body_type) {
         this.body_type = body_type;
     }
-    public String getRelease_clause_euro() {
+    public Double getRelease_clause_euro() {
         return release_clause_euro;
     }
-    public void setRelease_clause_euro(String release_clause_euro) {
+    public void setRelease_clause_euro(Double release_clause_euro) {
         this.release_clause_euro = release_clause_euro;
     }
     public String getNational_team() {
@@ -181,10 +205,10 @@ public class Futbolariak {
     public void setNational_team(String national_team) {
         this.national_team = national_team;
     }
-    public String getNational_rating() {
+    public int getNational_rating() {
         return national_rating;
     }
-    public void setNational_rating(String national_rating) {
+    public void setNational_rating(int national_rating) {
         this.national_rating = national_rating;
     }
     public String getNational_team_position() {
@@ -199,10 +223,10 @@ public class Futbolariak {
     public void setNational_jersey_number(String national_jersey_number) {
         this.national_jersey_number = national_jersey_number;
     }
-    public String getCrossing() {
+    public int getCrossing() {
         return crossing;
     }
-    public void setCrossing(String crossing) {
+    public void setCrossing(int crossing) {
         this.crossing = crossing;
     }
     public String getFinishing() {
@@ -373,18 +397,6 @@ public class Futbolariak {
     public void setSliding_tackle(String sliding_tackle) {
         this.sliding_tackle = sliding_tackle;
     }
+    
 
-    
-    public Futbolariak() {
-    }
-    public Futbolariak(String name, String full_name, int age, Double value_euro) {
-        this.name = name;
-        this.full_name = full_name;
-        this.age = age;
-        this.value_euro = value_euro;
-    }
-
-    
-    
-    
 }
