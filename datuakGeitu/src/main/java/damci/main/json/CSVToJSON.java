@@ -32,7 +32,7 @@ public class CSVToJSON {
         try {
             // Ruta del archivo CSV de entrada
             Path csvFilePath = Paths.get(
-                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\csv\\fifa_testBi.csv");
+                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\csv\\fifa_players.csv");
 
             CSVReader csvReader = new CSVReader(new FileReader(csvFilePath.toFile()));
 
@@ -71,7 +71,7 @@ public class CSVToJSON {
 
             // Escritura de la cadena JSON en un archivo de salida
             FileWriter jsonWriter = new FileWriter(
-                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\json\\fifa_testBi.json");
+                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\json\\fifa_players.json");
             jsonWriter.write(jsonString);
             jsonWriter.close();
 
