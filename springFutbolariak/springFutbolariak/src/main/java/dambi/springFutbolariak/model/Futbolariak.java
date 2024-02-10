@@ -58,6 +58,12 @@ public class Futbolariak {
     public Futbolariak() {
     }
     
+    public Futbolariak(Player player, List<String> positions, String nationality) {
+        this.player = player;
+        this.positions = positions;
+        this.nationality = nationality;
+    }
+
     public Futbolariak(ObjectId id, Player player, List<String> positions, String nationality, int overall_rating,
             int potential, Double value_euro, Double wage_euro, String preferred_foot, int international_reputation,
             int weak_foot, int skill_moves, String body_type, Double release_clause_euro, String national_team,

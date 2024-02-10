@@ -75,7 +75,7 @@ public class MongoDBFutbolariakRepository implements FutbolariakRepository {
     // POST
     @Override
     public Futbolariak save(Futbolariak futbolariak) {
-
+        futbolariak.setId(new ObjectId());
         futbolariakCollection.insertOne(futbolariak);
         return futbolariak;
     }
