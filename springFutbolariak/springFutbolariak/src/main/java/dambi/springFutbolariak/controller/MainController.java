@@ -1,11 +1,13 @@
 package dambi.springFutbolariak.controller;
 
 
+
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,9 +34,9 @@ public class MainController {
 		return futbolariakRepository.findById(futbolariId);
 	}
 
-    @GetMapping(path = "/futbolariakNationality")
-    public @ResponseBody Iterable<Futbolariak> getFutboariakByNationality(@RequestParam String Nationality){
-        return futbolariakRepository.findByNationality(Nationality);
+    @GetMapping(path = "/findNacionalityAndPosition")
+    public @ResponseBody Iterable<Futbolariak> getByNacionalityAndPosition(@RequestParam String nationality,@RequestParam String position){
+        return futbolariakRepository.findByNationalityAndPosition(nationality, position);
     }
 
     //DELETE
@@ -52,35 +54,41 @@ public class MainController {
 		}
 	}
 
-    @DeleteMapping(path = "/deleteFutbolariName")
-	public ResponseEntity<String> deleteFutbolariName(@RequestParam String name) {
+    @DeleteMapping(path = "/deleteByNameAndBirthDate")
+	public ResponseEntity<String> deleteFutbolariName(@RequestParam String name,@RequestParam String birthdate) {
 		try {
-			futbolariakRepository.deleteByName(name);
+			futbolariakRepository.deleteByNameAndBirthDate(name, birthdate);
             return ResponseEntity.ok().build();
 
 		} catch (Exception ex) {
-			System.out.println("Ez da futbolaririk izen orrekin bilatu");
+			System.out.println("Ez da futbolaririk bilatu");
 			return ResponseEntity.notFound().build();
 		}
 	}
 
     //PUT
 
-    @PutMapping(value = "/updateValue")
-    public Futbolariak updateValue(@RequestParam String futbolariId, @RequestParam Double newValue){
-        Futbolariak futbolaria = futbolariakRepository.findById(futbolariId);
-        futbolaria.setValue_euro(newValue);
-        Futbolariak emaitza = futbolariakRepository.save(futbolaria);
-        return emaitza;
+    @PutMapping(value = "/updateValue/{_id}/{newValue_euro}")
+    public ResponseEntity<Futbolariak> updateValue(@PathVariable String _id, @PathVariable String newValue_euro){
+        try{
+            Double euroValue = Double.parseDouble(newValue_euro);
+            ObjectId id = new ObjectId(_id);
+            futbolariakRepository.update(id , euroValue);
+            return ResponseEntity.ok().build();
+            
+        }catch(Exception e){
+            e.printStackTrace();
+            return ResponseEntity.notFound().build();
+        }
     }
 
     //POST
 
-    @PostMapping(path =  "/newFutbolaria")
+    /*@PostMapping(path =  "/newFutbolaria")
     public @ResponseBody String addNewFutbolaria(@RequestParam String name,@RequestParam String full_name,@RequestParam int age,@RequestParam Double value_euro){
         Futbolariak futbolaria = new Futbolariak(name, full_name, age, value_euro);
         futbolariakRepository.save(futbolaria);
         return "futbolaria gordeta";
-    }
+    }*/
     
 }
