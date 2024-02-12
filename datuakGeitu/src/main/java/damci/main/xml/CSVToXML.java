@@ -38,6 +38,10 @@ public class CSVToXML {
             List<String[]> records = csvReader.readAll();
             String[] columnNames = records.get(0);
 
+            for (int i = 0; i < columnNames.length; i++) {
+                columnNames[i] = cleanColumnName(columnNames[i]);
+            }
+
             ObjectMapper objectMapper = new ObjectMapper();
             ArrayNode jsonArray = objectMapper.createArrayNode();
 
@@ -72,7 +76,7 @@ public class CSVToXML {
             String xmlString = xmlMapper.writeValueAsString(rootNode);
 
             FileWriter xmlWriter = new FileWriter(
-                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\xml\\fifa_testBi.xml");
+                    "C:\\Users\\gerson\\Documents\\DatuAtzipenaDoc\\Datu-Atzipena.-2.ebaluazioa-GersonCalo\\data\\xml\\fifa_test.xml");
             xmlWriter.write(xmlString);
             xmlWriter.close();
 
@@ -81,5 +85,10 @@ public class CSVToXML {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    private static String cleanColumnName(String columnName) {
+        // Reemplazar paréntesis y otros caracteres especiales con guiones bajos
+        return columnName.replaceAll("[^a-zA-Z0-9_]", "_");
     }
 }
