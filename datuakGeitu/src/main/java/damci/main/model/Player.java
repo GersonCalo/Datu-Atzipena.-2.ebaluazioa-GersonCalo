@@ -1,6 +1,5 @@
 package damci.main.model;
 
-import java.util.List;
 
 public class Player {
     private String name;

@@ -1,4 +1,4 @@
-package damci.main.json.toMongo;
+package damci.main.json.mongo;
 
 import java.io.FileReader;
 import java.nio.file.Path;

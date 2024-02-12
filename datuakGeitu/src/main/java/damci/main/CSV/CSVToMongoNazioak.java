@@ -4,10 +4,8 @@ import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
+import java.util.Scanner;
 import org.bson.Document;
 
 import com.mongodb.client.MongoClient;
@@ -18,14 +16,15 @@ import com.opencsv.CSVReader;
 
 public class CSVToMongoNazioak {
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Por favor, proporciona la lista de nacionalidades como argumento.");
-            return;
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        Set<String> allowedNationalities = new HashSet<>(Arrays.asList(args));
+        System.out.println("Por favor, introduce la lista de nacionalidades separadas por comas:");
+        String nationalitiesInput = scanner.nextLine();
+        String[] allowedNationalities = nationalitiesInput.split(",");
+        List<String> allowedNationalitiesList = Arrays.asList(allowedNationalities);
+
         boolean foundRecords = false; // Variable para verificar si se encontraron registros
-
+        scanner.close();
         try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017")) {
             MongoDatabase database = mongoClient.getDatabase("futbolariakNationaityDataBaseTest");
 
@@ -44,7 +43,7 @@ public class CSVToMongoNazioak {
                     String[] record = records.get(i);
                     String nationality = record[Arrays.asList(columnNames).indexOf("nationality")];
 
-                    if (!allowedNationalities.contains(nationality)) {
+                    if (!allowedNationalitiesList.contains(nationality)) {
                         // La nacionalidad no está en la lista permitida, continuar con el siguiente
                         // registro
                         continue;
