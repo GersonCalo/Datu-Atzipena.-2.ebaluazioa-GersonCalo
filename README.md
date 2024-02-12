@@ -22,7 +22,7 @@ Gure REST API zerbitzurako hasierako datu-iturria MongoDB datu-base lokala da. D
 | GET              | /futbolarlak/futbolarlakAll        | Erregistro guztien xehetasunak |
 | GET              | /futbolariak/findNationalityAndPosition| Erregistroen xehetasunak, nazionalitatearen eta posizioaren arabera   |
 | DELETE              | /Futbolariak/deleteByNameAndBirthDate| Ezabatu erregistroak izenaren eta urtebetetzearen arabera   |
-|  DELETE            | /futbolariak/deleteNyId/{id}  |Ezabatu ID bidezko erregistro bat|
+|  DELETE            | /futbolariak/deleteNyId  |Ezabatu ID bidezko erregistro bat|
 
 
 
