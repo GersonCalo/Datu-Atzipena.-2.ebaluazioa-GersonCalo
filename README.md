@@ -1,5 +1,5 @@
 
-# REST APIren eta MongoDBren dokumentazioa
+# REST APIren dokumentazioa
 
 ## 1. Hasierako datu-iturria
 
